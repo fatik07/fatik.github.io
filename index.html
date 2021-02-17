@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Comming Soon</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Fatik</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <img class="wave" src="img/curve.png" alt="background man">
+        <div class="contentBx">
+            <h2>Development stage</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui consectetur ratione, non obcaecati
+                architecto neque dignissimos impedit modi, necessitatibus repellat omnis! Quia ex voluptas
+                reiciendis
+                corporis quibusdam. Quidem, praesentium explicabo.
+            </p>
+            <div class="countDown">
+                <div class="time">
+                    <div id="day"></div><span>Days</span>
+                </div>
+                <div class="time">
+                    <div id="hour"></div><span>Minutes</span>
+                </div>
+                <div class="time">
+                    <div id="minute"></div><span>Hours</span>
+                </div>
+                <div class="time">
+                    <div id="second"></div><span>Seconds</span>
+                </div>
+            </div>
+            <a href="#" onclick="toggle();">Notify Me !</a>
+        </div>
+        <div class="imgBx">
+            <img src="img/man.png" alt="orang">
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="img/facebook.png" alt="fb"></a></li>
+            <li><a href="#"><img src="img/instagram.png" alt="ig"></a></li>
+            <li><a href="#"><img src="img/twitter.png" alt="twt"></a></li>
+        </ul>
+    </section>
+
+    <div class="newletter">
+        <h2>Stay Tunned !</h2>
+        <p>Get notified at launch</p>
+        <div class="inputBox">
+            <form action="">
+                <input type="email" placeholder="Enter your email" required>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        <img src="img/close.png" alt="" onclick="toggle();">
+    </div>
+
+    <!-- javascript -->
+    <script type="text/javascript">
+        function toggle() {
+            var newletter = document.querySelector('.newletter');
+            newletter.classList.toggle('active');
+        };
+
+        var countDate = new Date('Apr 1, 2021 00:00:00').getTime();
+
+        function newYear() {
+            var now = new Date().getTime();
+            gap = countDate - now;
+
+            var second = 1000;
+            var minute = second * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+
+            var d, h, m, s;
+            d = Math.floor(gap / (day));
+            h = Math.floor((gap % (day)) / (hour));
+            m = Math.floor((gap % (hour)) / (minute));
+            s = Math.floor((gap % (minute)) / (second));
+
+            document.getElementById('day').innerHTML = d;
+            document.getElementById('hour').innerHTML = h;
+            document.getElementById('minute').innerHTML = m;
+            document.getElementById('second').innerHTML = s;
+        };
+
+        setInterval(function () {
+            newYear();
+        }, 1000);
+    </script>
+</body>
+
+</html>
