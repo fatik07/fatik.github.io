@@ -216,7 +216,27 @@ section .sci li a {
     cursor: pointer;
 }
 
-@media(max-width: 991px) {
+@media only screen and (max-width: 1350px) {
+    section .contentBx h2 {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+
+    .wave {
+        max-width: 800px;
+    }
+
+    section .sci {
+        bottom: 0px;
+    }
+
+    section .contentBx a {
+        margin-top: 0px;
+        padding: 10px 25px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
     section {
         flex-direction: column;
         padding-top: 150px;
@@ -233,7 +253,7 @@ section .sci li a {
 
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     header {
         padding: 20px 50px;
     }
