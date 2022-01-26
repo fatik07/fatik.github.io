@@ -644,6 +644,7 @@ body.light-theme {
 /*=============== WORK ===============*/
 .work__container {
   padding-top: 1rem;
+  justify-content: center;
 }
 
 .work__filters {
@@ -671,6 +672,7 @@ body.light-theme {
 .work__img {
   border-radius: 1rem;
   margin-bottom: 0.75rem;
+  width: 100%;
 }
 
 .work__title {
