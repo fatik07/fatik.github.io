@@ -30,6 +30,29 @@ modalClose.forEach((mc) => {
   });
 });
 
+/*=============== WORK MODAL ===============*/
+const modalWorkViews = document.querySelectorAll(".work__modal"),
+  modalWorkBtns = document.querySelectorAll(".work__button-detail"),
+  modalWorkClose = document.querySelectorAll(".work__modal-close");
+
+let modalWork = function (modalWorkClick) {
+  modalWorkViews[modalWorkClick].classList.add("active-modal-work");
+};
+
+modalWorkBtns.forEach((mwb, iw) => {
+  mwb.addEventListener("click", () => {
+    modalWork(iw);
+  });
+});
+
+modalWorkClose.forEach((mwc) => {
+  mwc.addEventListener("click", () => {
+    modalWorkViews.forEach((mwv) => {
+      mwv.classList.remove("active-modal-work");
+    });
+  });
+});
+
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
 let mixerPortfolio = mixitup(".work__container", {
   selectors: {
@@ -142,3 +165,8 @@ sr.reveal(".home__data");
 sr.reveal(".home__handle", { delay: 400 });
 sr.reveal(".home__social, .home__scroll", { delay: 400, origin: "bottom" });
 sr.reveal(".about__img", { delay: 400, origin: "left" });
+
+// alertify
+function localhost() {
+  alertify.alert("Announcement", "Masih di Localhost!");
+}
